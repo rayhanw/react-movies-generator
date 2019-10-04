@@ -42,9 +42,9 @@ const Form = ({ handleSubmit }) => {
       <Button
         type="submit"
         variant="contained"
-        color="primary"
         className={styles.button}
         disabled={disable}
+        data-color={disable ? 'gray' : 'colorful'}
       >
         Get movies
       </Button>

@@ -5,7 +5,7 @@ import useStyles from './styles';
 
 const MovieList = ({ movies }) => {
   const styles = useStyles();
-  console.log(movies);
+
   if (!movies || movies.length === 0) {
     return <div className={styles.largeTopSpacing}>Search for a movie!</div>;
   }
