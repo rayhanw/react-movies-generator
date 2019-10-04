@@ -4,7 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 
-import useStyles from './styles/styles';
+import useStyles from './styles/';
 
 const Form = ({ handleSubmit }) => {
   const [keyword, setKeyword] = useState('');
