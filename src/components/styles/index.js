@@ -10,6 +10,15 @@ const useStyles = makeStyles(theme => {
     },
     button: {
       margin: theme.spacing(1)
+    },
+    largeTopSpacing: {
+      marginTop: theme.spacing(5)
+    },
+    form: {
+      display: 'flex',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      alignItems: 'center'
     }
   };
 });

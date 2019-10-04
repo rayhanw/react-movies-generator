@@ -14,7 +14,8 @@ h5,
 h6,
 p,
 a,
-span {
+span,
+div {
   font-family: 'Roboto', sans-serif;
 }
 

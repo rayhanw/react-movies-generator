@@ -5,6 +5,8 @@ import Form from './Form';
 
 import fetchMovies from '../apis';
 
+import moviesStyle from './styles/Movies.module.css';
+
 class App extends Component {
   state = { keyword: '', movies: [] };
 
@@ -16,11 +18,14 @@ class App extends Component {
   };
 
   render() {
+    console.log(moviesStyle.movies);
     return (
       <div style={{ margin: '0 1em' }}>
-        <h1>Movies</h1>
+        <h1 style={{ textAlign: 'center' }}>Movies</h1>
         <Form handleSubmit={this.handleSubmit} />
-        <MovieList movies={this.state.movies} />
+        <div className={moviesStyle.movies}>
+          <MovieList movies={this.state.movies} />
+        </div>
       </div>
     );
   }
