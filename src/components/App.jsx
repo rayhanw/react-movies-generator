@@ -18,7 +18,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(moviesStyle.movies);
     return (
       <div style={{ margin: '0 1em' }}>
         <h1 style={{ textAlign: 'center' }}>Movies</h1>
