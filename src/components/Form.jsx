@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 
 import useStyles from './styles/';
 import './styles/Button.css';
+import formStyles from './styles/Form.module.css';
 
 const Form = ({ handleSubmit }) => {
   const [keyword, setKeyword] = useState('');
@@ -26,12 +27,12 @@ const Form = ({ handleSubmit }) => {
       className={styles.form}
       onSubmit={e => handleSubmit(e, keyword)}
     >
-      <FormControl>
+      <FormControl style={{ width: '50%' }}>
         <InputLabel htmlFor="keyword" className="keyword-label">
-          Enter a movie name:
+          Click here and enter a movie name
         </InputLabel>
         <Input
-          id="keyword"
+          id={formStyles.keyword}
           className={styles.input}
           onChange={e => setKeyword(e.target.value)}
           value={keyword}
@@ -45,6 +46,7 @@ const Form = ({ handleSubmit }) => {
         className={styles.button}
         disabled={disable}
         data-color={disable ? 'gray' : 'colorful'}
+        style={{ width: '50%' }}
       >
         Get movies
       </Button>
