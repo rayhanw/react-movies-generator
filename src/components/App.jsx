@@ -8,13 +8,15 @@ import fetchMovies from '../apis';
 import moviesStyle from './styles/Movies.module.css';
 
 class App extends Component {
-  state = { keyword: '', movies: [] };
+  state = { keyword: '', movies: [], previousKeyword: '' };
 
   handleSubmit = async (e, keyword) => {
     e.preventDefault();
-    await this.setState({ keyword });
-    const movies = await fetchMovies(this.state.keyword);
-    this.setState({ movies });
+    await this.setState({ previousKeyword: this.state.keyword, keyword });
+    if (this.state.keyword !== this.state.previousKeyword) {
+      const movies = await fetchMovies(this.state.keyword);
+      this.setState({ movies });
+    }
   };
 
   render() {
