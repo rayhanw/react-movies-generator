@@ -14,6 +14,7 @@ const Form = ({ handleSubmit }) => {
   const styles = useStyles();
 
   useEffect(() => {
+    // Enable button if input is there (at least 1 character long)
     keyword.length > 0 ? setDisable(false) : setDisable(true);
   }, [keyword]);
 

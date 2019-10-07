@@ -8,18 +8,15 @@ import fetchMovies from '../apis';
 import moviesStyle from './styles/Movies.module.css';
 
 const App = () => {
-  const [keyword, setKeyword] = useState('');
   const [movies, setMovies] = useState([]);
-  const [previousKeyword, setPreviousKeyword] = useState('');
 
-  const handleSubmit = async (e, inputKeyword) => {
+  const handleSubmit = async (e, keyword) => {
     e.preventDefault();
-    await setPreviousKeyword(keyword);
-    await setKeyword(inputKeyword);
-    if (keyword !== previousKeyword) {
-      const movies = await fetchMovies(keyword);
-      setMovies(movies);
-    }
+
+    // Call OMDB API with user input
+    const movies = await fetchMovies(keyword);
+    // Set movie list to the result of API call
+    setMovies(movies);
   };
 
   return (
