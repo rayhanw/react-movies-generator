@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import MovieList from './MovieList';
 import Form from './Form';
@@ -7,29 +7,30 @@ import fetchMovies from '../apis';
 
 import moviesStyle from './styles/Movies.module.css';
 
-class App extends Component {
-  state = { keyword: '', movies: [], previousKeyword: '' };
+const App = () => {
+  const [keyword, setKeyword] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [previousKeyword, setPreviousKeyword] = useState('');
 
-  handleSubmit = async (e, keyword) => {
+  const handleSubmit = async (e, inputKeyword) => {
     e.preventDefault();
-    await this.setState({ previousKeyword: this.state.keyword, keyword });
-    if (this.state.keyword !== this.state.previousKeyword) {
-      const movies = await fetchMovies(this.state.keyword);
-      this.setState({ movies });
+    await setPreviousKeyword(keyword);
+    await setKeyword(inputKeyword);
+    if (keyword !== previousKeyword) {
+      const movies = await fetchMovies(keyword);
+      setMovies(movies);
     }
   };
 
-  render() {
-    return (
-      <div style={{ margin: '0 1em' }}>
-        <h1 style={{ textAlign: 'center' }}>Movies</h1>
-        <Form handleSubmit={this.handleSubmit} />
-        <div className={moviesStyle.movies}>
-          <MovieList movies={this.state.movies} />
-        </div>
+  return (
+    <div style={{ margin: '0 1em' }}>
+      <h1 style={{ textAlign: 'center' }}>Movies</h1>
+      <Form handleSubmit={handleSubmit} />
+      <div className={moviesStyle.movies}>
+        <MovieList movies={movies} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default App;
