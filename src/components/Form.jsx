@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import Button from '@material-ui/core/Button';
+
+import ThemedButton from './ThemedButton';
 
 import useStyles from './styles/';
-import './styles/Button.css';
 import formStyles from './styles/Form.module.css';
 
 const Form = ({ handleSubmit }) => {
@@ -36,16 +36,13 @@ const Form = ({ handleSubmit }) => {
           placeholder="Doctor Strange"
         />
       </FormControl>
-      <Button
+      <ThemedButton
         type="submit"
         variant="contained"
-        className={styles.button}
-        disabled={disable}
+        disable={disable}
         data-color={disable ? 'gray' : 'colorful'}
-        style={{ width: '50%' }}
-      >
-        Get movies
-      </Button>
+        text="Get movies"
+      />
     </form>
   );
 };
