@@ -14,11 +14,7 @@ const Form = ({ handleSubmit }) => {
   const styles = useStyles();
 
   useEffect(() => {
-    if (keyword.length > 0) {
-      setDisable(false);
-    } else {
-      setDisable(true);
-    }
+    keyword.length > 0 ? setDisable(false) : setDisable(true);
   }, [keyword]);
 
   return (
