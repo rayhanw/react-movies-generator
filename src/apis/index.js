@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const fetchMovies = async keyword => {
   const response = await axios.get(
-    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API}&s=${keyword}`
+    `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API}&s=${keyword}`
   );
 
   return response.data.Search;
