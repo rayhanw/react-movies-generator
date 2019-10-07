@@ -3,8 +3,6 @@ import React from 'react';
 import movieStyles from './styles/Movie.module.css';
 
 const Movie = ({ movie }) => {
-  console.log(movie);
-
   return (
     <div className={movieStyles.movie}>
       <h2>
