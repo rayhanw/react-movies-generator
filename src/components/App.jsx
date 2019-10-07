@@ -3,6 +3,7 @@ import Loader from "react-loader-spinner";
 
 import MovieList from "./MovieList";
 import Form from "./Form";
+import SEO from "./seo";
 
 import fetchMovies from "../apis";
 
@@ -33,6 +34,7 @@ const App = () => {
 
 	return (
 		<div style={{ margin: "0 1em" }}>
+			<SEO />
 			<h1 style={{ textAlign: "center" }}>Movies</h1>
 			<Form handleSubmit={handleSubmit} />
 			<div className="movies">
