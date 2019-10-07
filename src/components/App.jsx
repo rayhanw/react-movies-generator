@@ -5,7 +5,7 @@ import Form from './Form';
 
 import fetchMovies from '../apis';
 
-import moviesStyle from './styles/Movies.module.css';
+import './styles/Movies.css';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -23,7 +23,7 @@ const App = () => {
     <div style={{ margin: '0 1em' }}>
       <h1 style={{ textAlign: 'center' }}>Movies</h1>
       <Form handleSubmit={handleSubmit} />
-      <div className={moviesStyle.movies}>
+      <div className="movies">
         <MovieList movies={movies} />
       </div>
     </div>
